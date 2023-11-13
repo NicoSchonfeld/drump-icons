@@ -12,7 +12,6 @@ const TypeIcon: React.FC<Props> = ({
         <svg
           width={w}
           height={h}
-          data-testid="geist-icon"
           fill="none"
           shape-rendering="geometricPrecision"
           stroke="currentColor"
@@ -30,7 +29,6 @@ const TypeIcon: React.FC<Props> = ({
         <svg
           width={w}
           height={h}
-          data-testid="geist-icon"
           fill="none"
           shape-rendering="geometricPrecision"
           stroke="currentColor"

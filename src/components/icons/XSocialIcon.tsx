@@ -12,7 +12,6 @@ const XSolialIcon: React.FC<Props> = ({
         <svg
           width={w}
           height={h}
-          data-testid="geist-icon"
           fill="none"
           shape-rendering="geometricPrecision"
           stroke="currentColor"
@@ -32,7 +31,6 @@ const XSolialIcon: React.FC<Props> = ({
         <svg
           width={w}
           height={h}
-          data-testid="geist-icon"
           fill="none"
           shape-rendering="geometricPrecision"
           stroke="currentColor"

@@ -12,7 +12,6 @@ const PlusIcon: React.FC<Props> = ({
         <svg
           width={w}
           height={h}
-          data-testid="geist-icon"
           fill="none"
           shape-rendering="geometricPrecision"
           stroke="currentColor"
@@ -29,7 +28,6 @@ const PlusIcon: React.FC<Props> = ({
         <svg
           width={w}
           height={h}
-          data-testid="geist-icon"
           fill="none"
           shape-rendering="geometricPrecision"
           stroke="currentColor"

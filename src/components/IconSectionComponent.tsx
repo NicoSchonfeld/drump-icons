@@ -36,6 +36,13 @@ import ChevronLeftIcon from "./icons/ChevronLeftIcon";
 import ChevronRightIcon from "./icons/ChevronRightIcon";
 
 import { motion } from "framer-motion";
+import SettingsIcon from "./icons/SettingsIcon";
+import EditIcon from "./icons/EditIcon";
+import HelpIcon from "./icons/HelpIcon";
+import SearchIcon from "./icons/SearchIcon";
+import ShoppingCartIcon from "./icons/ShoppingCartIcon";
+import RotateIcon from "./icons/RotateIcon";
+import MailIcon from "./icons/MailIcon";
 
 type IconsArray = { id: number; icon: object; title: string };
 
@@ -218,6 +225,43 @@ const IconSectionComponent: React.FC = () => {
       ),
       title: "chevron-right",
     },
+    {
+      id: 34,
+      icon: <SettingsIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      title: "settings",
+    },
+    {
+      id: 35,
+      icon: <EditIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      title: "edit",
+    },
+    {
+      id: 36,
+      icon: <HelpIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      title: "edit",
+    },
+    {
+      id: 37,
+      icon: <SearchIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      title: "Search",
+    },
+    {
+      id: 38,
+      icon: (
+        <ShoppingCartIcon solid={changeIcon ? true : false} w="24" h="24" />
+      ),
+      title: "shopping-cart",
+    },
+    {
+      id: 39,
+      icon: <RotateIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      title: "rotate",
+    },
+    {
+      id: 40,
+      icon: <MailIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      title: "mail",
+    },
   ];
 
   return (
@@ -231,15 +275,15 @@ const IconSectionComponent: React.FC = () => {
         {changeIcon ? "Outline" : "Solid"}
       </button>
 
-      <ul className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 gap-10">
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {Icons?.map((dato, index) => (
           <li
             className="flex items-center justify-center flex-col gap-2"
             key={dato?.id}
           >
             <motion.div
-              whileHover={{ scale: 1.1 }}
-              className="flex cursor-pointer text-white items-center justify-center rounded-md w-full h-32 shadow bg-gradient-to-bl from-white/10 to-white/5 border-t border-white/20 ransition-all"
+              whileHover={{ scale: 1.05 }}
+              className="flex cursor-pointer text-white items-center justify-center rounded-md w-full h-40 shadow bg-gradient-to-bl from-white/10 to-white/5 border-t border-white/20 ransition-all"
             >
               <>{dato?.icon}</>
             </motion.div>

@@ -1,6 +1,6 @@
 import { Props } from "@/types/type";
 
-const CheckIcon: React.FC<Props> = ({
+const SearchIcon: React.FC<Props> = ({
   solid = true,
   w = "24",
   h = "24",
@@ -21,7 +21,8 @@ const CheckIcon: React.FC<Props> = ({
           viewBox="0 0 24 24"
           {...props}
         >
-          <path d="M20 6L9 17l-5-5" />
+          <path d="M11 17.25a6.25 6.25 0 110-12.5 6.25 6.25 0 010 12.5z" />
+          <path d="M16 16l4.5 4.5" />
         </svg>
       ) : (
         <svg
@@ -36,11 +37,12 @@ const CheckIcon: React.FC<Props> = ({
           viewBox="0 0 24 24"
           {...props}
         >
-          <path d="M20 6L9 17l-5-5" />
+          <path d="M11 17.25a6.25 6.25 0 110-12.5 6.25 6.25 0 010 12.5z" />
+          <path d="M16 16l4.5 4.5" />
         </svg>
       )}
     </>
   );
 };
 
-export default CheckIcon;
+export default SearchIcon;
