@@ -4,8 +4,8 @@ import React from "react";
 
 const App: React.FC = () => {
   return (
-    <main className="w-full h-auto bg-white relative">
-      <div className="container mx-auto p-20">
+    <main className="relative w-full h-auto bg-black">
+      <div className="container mx-auto p-20 ">
         <IconSectionComponent />
       </div>
     </main>

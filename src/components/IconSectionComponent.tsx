@@ -35,10 +35,13 @@ import CheckIcon from "./icons/CheckIcon";
 import ChevronLeftIcon from "./icons/ChevronLeftIcon";
 import ChevronRightIcon from "./icons/ChevronRightIcon";
 
+import { motion } from "framer-motion";
+
 type IconsArray = { id: number; icon: object; title: string };
 
 const IconSectionComponent: React.FC = () => {
   const [changeIcon, setChangeIcon] = useState<boolean>(false);
+  const [copy, setCopy] = useState<boolean>(false);
 
   const Icons: Array<IconsArray> = [
     {
@@ -219,7 +222,7 @@ const IconSectionComponent: React.FC = () => {
 
   return (
     <section className="flex flex-col gap-5">
-      <h1 className="text-4xl font-bold">Drump Icons</h1>
+      <h1 className="text-4xl font-bold text-white">Drump Icons</h1>
 
       <button
         onClick={() => setChangeIcon(!changeIcon)}
@@ -229,14 +232,18 @@ const IconSectionComponent: React.FC = () => {
       </button>
 
       <ul className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 gap-10">
-        {Icons?.map((dato) => (
+        {Icons?.map((dato, index) => (
           <li
             className="flex items-center justify-center flex-col gap-2"
             key={dato?.id}
           >
-            <div className="flex items-center justify-center rounded-md w-full h-32 hover:shadow hover:bg-gray-50 hover:border transition-all">
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              className="flex cursor-pointer text-white items-center justify-center rounded-md w-full h-32 shadow bg-gradient-to-bl from-white/10 to-white/5 border-t border-white/20 ransition-all"
+            >
               <>{dato?.icon}</>
-            </div>
+            </motion.div>
+
             <p className="font-light text-[12px] text-gray-500 text-center">
               {dato?.title}
             </p>
