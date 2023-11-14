@@ -296,7 +296,7 @@ const IconSectionComponent: React.FC = () => {
 
   return (
     <section className="relative flex flex-col gap-5 overflow-hidden">
-      <div className=" w-full flex items-center justify-center pb-10">
+      {/*  <div className=" w-full flex items-center justify-center pb-10">
         <div className="z-[1] flex items-center justify-center gap-3 w-20 h-10 border border-white/20 rounded-full ">
           <div
             onClick={() => {
@@ -319,7 +319,7 @@ const IconSectionComponent: React.FC = () => {
             }
           ></div>
         </div>
-      </div>
+      </div> */}
 
       <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 z-[1]">
         {Icons?.map((dato) => (
@@ -328,7 +328,7 @@ const IconSectionComponent: React.FC = () => {
             key={dato?.id}
           >
             <div
-              className="z-[1] flex cursor-pointer text-white w-full items-center justify-center group relative max-w-md rounded-xl border-t border-white/20 bg-gradient-to-bl from-white/10 to-white/5 px-8 py-16 shadow-2xl"
+              className="z-[1] flex text-white w-full items-center justify-center group relative max-w-md rounded-xl border-t border-white/20 bg-gradient-to-bl from-white/10 to-white/5 px-8 py-16 shadow-2xl"
               onMouseMove={handleMouseMove}
             >
               <motion.div
