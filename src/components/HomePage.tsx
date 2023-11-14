@@ -32,7 +32,8 @@ const HomePage = () => {
         Drump Icons
       </h1>
       <p className="text-center text-sm lg:text-base text-gray-500 z-[1]">
-        ¡Durmp te regala los mejores íconos para usar en tu web! <br />
+        ¡Durmp te regala los mejores íconos para usar en tus proyectos de React!
+        <br />
         Compatible con Tailwind css.
       </p>
 
