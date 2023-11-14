@@ -13,11 +13,11 @@ const KeyIcon: React.FC<Props> = ({
           width={w}
           height={h}
           fill="none"
-          shape-rendering="geometricPrecision"
+          shapeRendering="geometricPrecision"
           stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
           viewBox="0 0 24 24"
           {...props}
         >
@@ -28,11 +28,11 @@ const KeyIcon: React.FC<Props> = ({
           width={w}
           height={h}
           fill="none"
-          shape-rendering="geometricPrecision"
+          shapeRendering="geometricPrecision"
           stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
           viewBox="0 0 24 24"
           {...props}
         >

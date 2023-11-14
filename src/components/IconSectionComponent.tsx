@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import { MouseEvent } from "react";
+import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+
 import HeartIcon from "./icons/HeartIcon";
 import BarsIcon from "./icons/BarsIcon";
 import XIcon from "./icons/XIcon";
@@ -34,8 +36,6 @@ import ChatIcon from "./icons/ChatIcon";
 import CheckIcon from "./icons/CheckIcon";
 import ChevronLeftIcon from "./icons/ChevronLeftIcon";
 import ChevronRightIcon from "./icons/ChevronRightIcon";
-
-import { motion } from "framer-motion";
 import SettingsIcon from "./icons/SettingsIcon";
 import EditIcon from "./icons/EditIcon";
 import HelpIcon from "./icons/HelpIcon";
@@ -47,248 +47,251 @@ import MailIcon from "./icons/MailIcon";
 type IconsArray = { id: number; icon: object; title: string };
 
 const IconSectionComponent: React.FC = () => {
-  const [changeIcon, setChangeIcon] = useState<boolean>(false);
-  const [copy, setCopy] = useState<boolean>(false);
-
   const Icons: Array<IconsArray> = [
     {
       id: 1,
-      icon: <HeartIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <HeartIcon solid={false} w="24" h="24" />,
       title: "heart",
     },
     {
       id: 2,
-      icon: <BarsIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <BarsIcon solid={false} w="24" h="24" />,
       title: "bars",
     },
     {
       id: 3,
-      icon: <XIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <XIcon solid={false} w="24" h="24" />,
       title: "x",
     },
 
     {
       id: 4,
-      icon: <TrashIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <TrashIcon solid={false} w="24" h="24" />,
       title: "trash",
     },
     {
       id: 5,
-      icon: <HomeIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <HomeIcon solid={false} w="24" h="24" />,
       title: "home",
     },
     {
       id: 6,
-      icon: <ArchiveBoxIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <ArchiveBoxIcon solid={false} w="24" h="24" />,
       title: "archive-box",
     },
     {
       id: 7,
-      icon: <ArrowTrayIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <ArrowTrayIcon solid={false} w="24" h="24" />,
       title: "arrow-tray",
     },
     {
       id: 8,
-      icon: <ArrowLeftIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <ArrowLeftIcon solid={false} w="24" h="24" />,
       title: "arrow-left",
     },
     {
       id: 9,
-      icon: <ArrowRightIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <ArrowRightIcon solid={false} w="24" h="24" />,
       title: "arrow-rigth",
     },
     {
       id: 10,
-      icon: <ArrowDownIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <ArrowDownIcon solid={false} w="24" h="24" />,
       title: "arrow-down",
     },
     {
       id: 11,
-      icon: <ArrowUpIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <ArrowUpIcon solid={false} w="24" h="24" />,
       title: "arrow-up",
     },
     {
       id: 12,
-      icon: (
-        <ArrowbackLeftIcon solid={changeIcon ? true : false} w="24" h="24" />
-      ),
+      icon: <ArrowbackLeftIcon solid={false} w="24" h="24" />,
       title: "arrow-back-left",
     },
     {
       id: 13,
-      icon: (
-        <ArrowPointingOutIcon solid={changeIcon ? true : false} w="24" h="24" />
-      ),
+      icon: <ArrowPointingOutIcon solid={false} w="24" h="24" />,
       title: "arrow-pointing-out",
     },
     {
       id: 14,
-      icon: (
-        <ArrowPointingInIcon solid={changeIcon ? true : false} w="24" h="24" />
-      ),
+      icon: <ArrowPointingInIcon solid={false} w="24" h="24" />,
       title: "arrow-pointing-in",
     },
     {
       id: 15,
-      icon: <BellAlertIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <BellAlertIcon solid={false} w="24" h="24" />,
       title: "bell-alert",
     },
     {
       id: 16,
-      icon: <BellIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <BellIcon solid={false} w="24" h="24" />,
       title: "bell",
     },
     {
       id: 17,
-      icon: <BellSlashIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <BellSlashIcon solid={false} w="24" h="24" />,
       title: "bell-slash",
     },
     {
       id: 18,
-      icon: <MoonIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <MoonIcon solid={false} w="24" h="24" />,
       title: "moon",
     },
     {
       id: 19,
-      icon: <SunIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <SunIcon solid={false} w="24" h="24" />,
       title: "sun",
     },
     {
       id: 20,
-      icon: <XSolialIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <XSolialIcon solid={false} w="24" h="24" />,
       title: "twitter",
     },
     {
       id: 21,
-      icon: <TypeIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <TypeIcon solid={false} w="24" h="24" />,
       title: "type",
     },
     {
       id: 22,
-      icon: <PlayIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <PlayIcon solid={false} w="24" h="24" />,
       title: "play",
     },
     {
       id: 23,
-      icon: <PlusIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <PlusIcon solid={false} w="24" h="24" />,
       title: "plus",
     },
     {
       id: 24,
-      icon: <PlusCircleIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <PlusCircleIcon solid={false} w="24" h="24" />,
       title: "plus-circle",
     },
     {
       id: 25,
-      icon: <EyeIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <EyeIcon solid={false} w="24" h="24" />,
       title: "eye",
     },
     {
       id: 26,
-      icon: <EyeSlashIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <EyeSlashIcon solid={false} w="24" h="24" />,
       title: "eye-slash",
     },
     {
       id: 27,
-      icon: <MoreIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <MoreIcon solid={false} w="24" h="24" />,
       title: "more",
     },
     {
       id: 28,
-      icon: <ClipboardIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <ClipboardIcon solid={false} w="24" h="24" />,
       title: "clipboard",
     },
     {
       id: 29,
-      icon: <KeyIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <KeyIcon solid={false} w="24" h="24" />,
       title: "key",
     },
     {
       id: 30,
-      icon: <ChatIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <ChatIcon solid={false} w="24" h="24" />,
       title: "chat",
     },
     {
       id: 31,
-      icon: <CheckIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <CheckIcon solid={false} w="24" h="24" />,
       title: "check",
     },
     {
       id: 32,
-      icon: <ChevronLeftIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <ChevronLeftIcon solid={false} w="24" h="24" />,
       title: "chevron-left",
     },
     {
       id: 33,
-      icon: (
-        <ChevronRightIcon solid={changeIcon ? true : false} w="24" h="24" />
-      ),
+      icon: <ChevronRightIcon solid={false} w="24" h="24" />,
       title: "chevron-right",
     },
     {
       id: 34,
-      icon: <SettingsIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <SettingsIcon solid={false} w="24" h="24" />,
       title: "settings",
     },
     {
       id: 35,
-      icon: <EditIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <EditIcon solid={false} w="24" h="24" />,
       title: "edit",
     },
     {
       id: 36,
-      icon: <HelpIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <HelpIcon solid={false} w="24" h="24" />,
       title: "edit",
     },
     {
       id: 37,
-      icon: <SearchIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <SearchIcon solid={false} w="24" h="24" />,
       title: "Search",
     },
     {
       id: 38,
-      icon: (
-        <ShoppingCartIcon solid={changeIcon ? true : false} w="24" h="24" />
-      ),
+      icon: <ShoppingCartIcon solid={false} w="24" h="24" />,
       title: "shopping-cart",
     },
     {
       id: 39,
-      icon: <RotateIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <RotateIcon solid={false} w="24" h="24" />,
       title: "rotate",
     },
     {
       id: 40,
-      icon: <MailIcon solid={changeIcon ? true : false} w="24" h="24" />,
+      icon: <MailIcon solid={false} w="24" h="24" />,
       title: "mail",
     },
   ];
 
+  let mouseX = useMotionValue(0);
+  let mouseY = useMotionValue(0);
+
+  function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
+    let { left, top } = currentTarget.getBoundingClientRect();
+
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+
   return (
     <section className="flex flex-col gap-5">
-      <h1 className="text-4xl font-bold text-white">Drump Icons</h1>
-
-      <button
-        onClick={() => setChangeIcon(!changeIcon)}
-        className="transition rounded border border-pink-600 bg-pink-600 px-4 py-2 text-sm font-medium text-white hover:bg-pink-700 hover:border-pink-700 hover:text-white focus:outline-none"
-      >
-        {changeIcon ? "Outline" : "Solid"}
-      </button>
-
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 z-[1]">
         {Icons?.map((dato, index) => (
           <li
             className="flex items-center justify-center flex-col gap-2"
             key={dato?.id}
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex cursor-pointer text-white items-center justify-center rounded-md w-full h-40 shadow bg-gradient-to-bl from-white/10 to-white/5 border-t border-white/20 ransition-all"
+            <div
+              className="z-[1] flex cursor-pointer text-white w-full items-center justify-center group relative max-w-md rounded-xl border-t border-white/20 bg-gradient-to-bl from-white/10 to-white/5 px-8 py-16 shadow-2xl"
+              onMouseMove={handleMouseMove}
             >
-              <>{dato?.icon}</>
-            </motion.div>
+              <motion.div
+                className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
+                style={{
+                  background: useMotionTemplate`
+                  radial-gradient(
+                  650px circle at ${mouseX}px ${mouseY}px,
+                  rgba(225, 225, 225, 0.1),
+                  transparent 80%
+            )
+          `,
+                }}
+              />
 
-            <p className="font-light text-[12px] text-gray-500 text-center">
+              <div className="z-[2]">
+                <>{dato?.icon}</>
+              </div>
+            </div>
+
+            <p className="font-light text-[12px] text-gray-400 text-center">
               {dato?.title}
             </p>
           </li>
