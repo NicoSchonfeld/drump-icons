@@ -28,10 +28,14 @@ const App: React.FC = () => {
       });
     };
 
-    window?.addEventListener("mousemove", mouseMove);
+    if (typeof window !== "undefined") {
+      window?.addEventListener("mousemove", mouseMove);
+    }
 
     return () => {
-      window?.removeEventListener("mousemove", mouseMove);
+      if (typeof window !== "undefined") {
+        window?.removeEventListener("mousemove", mouseMove);
+      }
     };
   }, []);
 
