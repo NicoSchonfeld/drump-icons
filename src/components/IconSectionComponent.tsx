@@ -280,7 +280,7 @@ const IconSectionComponent: React.FC = () => {
     {
       id: 44,
       icon: <VerifiedIcon solid={currentColor} w="24" h="24" />,
-      title: "share",
+      title: "verified",
     },
   ];
 
