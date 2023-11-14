@@ -44,7 +44,7 @@ const HomePage = () => {
           }`}
         >
           <p>
-            <span className="text-indigo-500">$ npm install</span> drump-icons
+            <span className="text-indigo-500">$ npm install</span> drump-icon
           </p>
           {copy ? (
             <CheckIcon
