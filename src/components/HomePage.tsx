@@ -8,7 +8,7 @@ import CheckIcon from "./icons/CheckIcon";
 const HomePage = () => {
   const [copy, setCopy] = useState<boolean>(false);
 
-  const copyInstall = "npm install drump-icons";
+  const copyInstall = "npm install drump-icon";
 
   useEffect(() => {
     setTimeout(() => {
