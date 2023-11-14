@@ -240,12 +240,12 @@ const IconSectionComponent: React.FC = () => {
     {
       id: 36,
       icon: <HelpIcon solid={currentColor} w="24" h="24" />,
-      title: "edit",
+      title: "help",
     },
     {
       id: 37,
       icon: <SearchIcon solid={currentColor} w="24" h="24" />,
-      title: "Search",
+      title: "search",
     },
     {
       id: 38,
